@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
         stage('Build') {
             steps {
-                echo 'Bulding'
+                echo 'Committed changes, building...'
+            }
+        }
+        stage('Trigger selected functional test scripts auto-run') {
+            steps {
+                echo 'Functional test scripts auto-running'
             }
         }
         stage('Deploy') {
