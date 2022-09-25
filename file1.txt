@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Automated Build, Trigger Selected Functional Test Scripts Auto-Run on Dev Env') {
+            steps {
+                echo 'Committed changes, building & testing...'
+            }
+        }
+       
+        stage('Scripts All Pass, Trigger Auto-deploying To Testing Env') {
+            steps {
+                echo 'Deploying'
+            }
+        }
+        
+        stage('Functional Test All Pass, Deploy To Pre-prod Env, Trigger Regression Test Scripts Auto-Run') {
+            steps {
+                echo 'Regression Testing'
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Releasing'
+            }
+        }
+         stage('Rollback') {
+            steps {
+                echo 'Rolling  back'
+            }
+        }
+    }
+}
+         
