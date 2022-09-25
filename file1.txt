@@ -8,7 +8,7 @@ pipeline {
             }
         }
        
-        stage('Scripts All Pass, Trigger Deploying To Testing Env') {
+        stage('Scripts All Pass, Trigger Auto-deploying To Testing Env') {
             steps {
                 echo 'Deploying'
             }
