@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Automated Build, Trigger Selected Functional Test Scripts Auto-Run on Dev Env') {
             steps {
-                echo 'Committed changes, building & testing...'
+                echo 'Committed changes, build executed and auto-run test scripts on Dev Env'
             }
         }
        
