@@ -17,12 +17,8 @@ pipeline {
                 echo 'Deploying'
             }
         }
-        stage('Functional Test On Enhancements') {
-            steps {
-                echo 'Functional Testing'
-            }
-        }
-        stage('Deploy To Pre-prod Env, Trigger Regression Test Scripts Auto-Run') {
+        
+        stage('Functional Test All Pass, Deploy To Pre-prod Env, Trigger Regression Test Scripts Auto-Run') {
             steps {
                 echo 'Regression Testing'
             }
