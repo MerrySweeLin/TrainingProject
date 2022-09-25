@@ -2,16 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Trigger Automated Build') {
+        stage('Automated Build, Trigger Selected Functional Test Scripts Auto-Run on Dev Env') {
             steps {
-                echo 'Committed changes, building...'
+                echo 'Committed changes, building & testing...'
             }
         }
-        stage('Trigger Selected Functional Test Scripts Auto-Run') {
-            steps {
-                echo 'Functional test scripts auto-running'
-            }
-        }
+       
         stage('Scripts All Pass, Trigger Deploying To Testing Env') {
             steps {
                 echo 'Deploying'
