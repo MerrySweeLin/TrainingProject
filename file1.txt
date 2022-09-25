@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Committed changes, trigger automated build') {
             steps {
                 echo 'Committed changes, building...'
             }
@@ -12,14 +12,19 @@ pipeline {
                 echo 'Functional test scripts auto-running'
             }
         }
-        stage('Deploy') {
+        stage('Scripts all pass, trigger deploying to testing env') {
             steps {
                 echo 'Deploying'
             }
         }
-        stage('Test') {
+        stage('functional test on enhancements') {
             steps {
-                echo 'Testing'
+                echo 'Functional Testing'
+            }
+        }
+        stage('Deploy to pre-prod env, trigger regression test scripts auto-run') {
+            steps {
+                echo 'Regression Testing'
             }
         }
         stage('Release') {
